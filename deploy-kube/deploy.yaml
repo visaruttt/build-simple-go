@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: myweb
+  name: myweb
+  namespace: my-web
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: myweb
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: myweb
+    spec:
+      containers:
+      - command:
+          - /api
+        image: visarutt/hello-go
+        name: hello-go
+        resources: {}
+status: {}

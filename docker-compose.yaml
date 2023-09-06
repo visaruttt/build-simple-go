@@ -1,0 +1,10 @@
+version: "3.9"
+
+services:
+  worker:
+    container_name: worker
+    image: ${IMAGE}:${TAG}
+    ports:
+      - "8080:8080"
+    entrypoint: [ "/api" ]
+    restart: "on-failure"
