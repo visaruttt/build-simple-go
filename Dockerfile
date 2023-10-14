@@ -1,6 +1,4 @@
-# DO NOT CHANGE. This file is being managed from a central repository
-# To know more simply visit https://github.com/honestbank/.github/blob/main/docs/about.md
-
+# Pre-built
 FROM golang:1.20 AS builder
 
 WORKDIR /app
@@ -8,6 +6,7 @@ COPY . .
 
 RUN CGO_ENABLED=0 GOOS=linux go build -o /api
 
+# built stage
 FROM gcr.io/distroless/static-debian10
 
 WORKDIR /app
